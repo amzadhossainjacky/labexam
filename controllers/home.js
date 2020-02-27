@@ -49,5 +49,34 @@ router.get('/prof/:id', function(req, res){
 	});
 });
 
+router.post('/prof/:id', function(req, res){
+
+	var user ={
+        username: req.body.uname,
+		password: req.body.password,
+		id:req.params.id
+	  };
+	  
+	  userModel.update(user, function(status){
+        if(status){
+            res.redirect('/login');
+          }
+          else{
+              res.redirect('/home');
+          }
+      });
+});
+
+router.get('/viewresturent', function(req, res){
+	userModel.getAllrest(function(results){
+		if(results.length > 0){
+			res.render('home/vres', {vres: results});
+		}else{
+			res.redirect('/home');
+		}
+	})
+});
+
+
 
 module.exports = router;

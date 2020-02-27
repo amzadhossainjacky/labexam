@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+	<div>
+		<h2>resturent List</h2> 		
+	</div>
+    <a href="/home">Back</a>|
+	<a href="/logout">Logout</a><br>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>name</td>
+            <td>loction</td>
+            <td>opening closing</td>
+            <td>holiday</td>
+            <td>Action</td>
+        </tr>
+
+       <% for(var i=0; i<vres.length; i++){ %>
+        <tr>
+            <td><%= vres[i].id %></td>
+            <td><%= vres[i].rname %></td>
+            <td><%= vres[i].rlocation %></td>
+            <td><%= vres[i].rtime %></td>
+            <td><%= vres[i].rhollyday %></td>
+            <td>
+                <a href="">Edit</a>
+                <a href="">Delete</a>
+            </td>
+        </tr> 
+        <% } %>
+
+    </table>
+</body>
+</html>

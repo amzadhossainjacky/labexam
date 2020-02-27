@@ -51,5 +51,26 @@ module.exports ={
 				callback(null);
 			}
 		});
+    },
+    
+    update: function(user, callback){
+		var sql = "update admin set aname=?, apassword=? where id=?";
+		db.execute(sql, [user.username, user.password, user.id], function(status){
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+    },
+	getAllrest: function(callback){
+		var sql = "select * from resturent";
+		db.getResults(sql,null, function(results){
+			if(results.length > 0){
+				callback(results);
+			}else{
+				callback(null);
+			}
+		});
     }
 }
