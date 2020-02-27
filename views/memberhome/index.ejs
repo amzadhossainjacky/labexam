@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+	<div>
+		<h2>Welcome member home, <%= user.mname%></h2> 		
+	</div>
+
+	<!-- <a href="/home/create_employee">Create Employee</a> |
+	<a href="">view Employee</a> --> |
+	<a href="/logout">Logout</a><br>
+	Username:  <%= user.mname %> <br>
+	Id: <%= user.id %> <br>
+	Password: <%= user.mpassword %>
+</body>
+</html>
