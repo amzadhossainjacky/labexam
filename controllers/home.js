@@ -16,4 +16,38 @@ router.get('/', function(req, res){
 	});
 });
 
+router.get('/viewmember', function(req, res){
+	userModel.getByAll(function(results){
+		if(results.length > 0){
+			res.render('home/vmejs', {userlist: results});
+		}else{
+			res.redirect('/home');
+		}
+	})
+});
+
+router.get('/delete/:id', function(req, res){
+
+	userModel.delete(req.params.id, function(status){
+			if(status){
+				res.redirect('/home/viewmember');
+			}else{
+				res.redirect('/home');
+			}
+	});
+});
+
+//profile
+router.get('/prof/:id', function(req, res){
+
+	userModel.prof(req.params.id, function(results){
+		if(results.length > 0){
+			res.render('home/profile', {user: results});
+		}else{
+			res.redirect('/home');
+		}
+	});
+});
+
+
 module.exports = router;

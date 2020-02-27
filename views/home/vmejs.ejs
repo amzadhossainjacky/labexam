@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+	<div>
+		<h2>member List</h2> 		
+	</div>
+    <a href="/home">Back</a>|
+	<a href="/logout">Logout</a><br>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>MemberName</td>
+            <td>Password</td>
+            <td>address</td>
+            <td>phone</td>
+            <td>email</td>
+            <td>Action</td>
+        </tr>
+
+       <% for(var i=0; i<userlist.length; i++){ %>
+        <tr>
+            <td><%= userlist[i].id %></td>
+            <td><%= userlist[i].mname %></td>
+            <td><%= userlist[i].mpassword %></td>
+            <td><%= userlist[i].maddress %></td>
+            <td><%= userlist[i].mphone %></td>
+            <td><%= userlist[i].memail %></td>
+            <td>
+                <a href="">Edit</a>
+                <a href="/home/delete/<%= userlist[i].id %>">Delete</a>
+            </td>
+        </tr> 
+        <% } %>
+
+    </table>
+</body>
+</html>

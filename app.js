@@ -45,9 +45,9 @@ var regModel = require.main.require('./models/regModel');
 app.post('/registration', function(req, res){
     var user ={
         username: req.body.mname,
-        password: req.body.mpassword
+        password: req.body.mpassword,
         email: req.body.memail,
-        address: req.body.maddress
+        address: req.body.maddress,
         phone: req.body.mphone
       };
 
