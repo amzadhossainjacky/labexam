@@ -1,0 +1,19 @@
+{
+  "name": "labexam",
+  "version": "1.0.0",
+  "description": "web app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amzadhossainjacky/labexam.git"
+  },
+  "author": "jacky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amzadhossainjacky/labexam/issues"
+  },
+  "homepage": "https://github.com/amzadhossainjacky/labexam#readme"
+}
